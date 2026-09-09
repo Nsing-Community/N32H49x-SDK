@@ -1,0 +1,35 @@
+;/*****************************************************************************
+; * Copyright (c) 2026, Nsing Technologies Inc.
+; * Scatter file for Run_In_CCM demo
+; *
+; * Memory map:
+; *   FLASH   : 0x08000000 - 0x080FFFFF (1024KB)
+; *   SRAM1   : 0x20000000 - 0x2003FFFF ( 256KB)
+; *   SRAM2   : 0x20040000 - 0x2006FFFF ( 192KB)
+; *   CCM SRAM: 0x20070000 - 0x2007FFFF (  64KB)
+; *
+; * Functions marked with __CCM_FUNC (section "ccmram") are stored in FLASH
+; * at load time and copied to CCM SRAM by __scatterload at startup, then
+; * executed from CCM SRAM.
+; *****************************************************************************/
+
+LR_IROM1 0x08000000 0x00080000 {
+
+    ; Normal code and read-only data: stored and executed from FLASH
+    ER_IROM1 0x08000000 0x00080000 {
+        *.o (RESET, +First)
+        *(InRoot$$Sections)
+        .ANY (+RO)
+    }
+
+    ; Load address  : FLASH (placed after ER_IROM1 by linker)
+    ; __scatterload copies this region from FLASH to CCM SRAM before main()
+    ER_CCM 0x20070000 0x00010000 {
+        *.o (ccmram)
+    }
+
+    ; SRAM data region (SRAM1 + SRAM2)
+    RW_IRAM1 0x20000000 0x00070000 {
+        .ANY (+RW +ZI)
+    }
+}

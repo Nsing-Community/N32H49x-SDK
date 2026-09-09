@@ -1,0 +1,61 @@
+1、功能说明
+    LPTIM1 计数IN1 IN2正交编码的上升沿个数
+2、使用环境
+    软件开发环境：KEIL MDK-ARM 5.34
+                  IAR EWARM 8.50.1
+    硬件开发环境：
+        基于全功能板N32H497ZGL7_EVB V1.0开发
+3、使用说明
+    系统配置:
+        1、时钟源：HSI+PLL
+        2、时钟频率：
+            240MHz
+        3、LPTIM CLK：LSI
+        4、打印：PA9 - baud rate 115200
+
+    端口配置：
+        PC0选择为LPTIM1 IN1输入
+        PC2选择为LPTIM1 IN2输入
+        PB0选择为IO输出
+        PB1选择为IO输出
+
+    LPTIM配置：
+        LPTIM1正交编码器模式，利用内部LSI时钟连续计数IN1 IN2上升沿个数
+
+    使用方法：
+        1、连接PB0和PC0，PB1和PC2
+        2、编译后下载程序运行，PB0 PB1输出20个脉冲周期，若encCNT等于40，则系统运行正常，并打印“LPTIM_ENC demo success!!!”，否则，打印“LPTIM_ENC demo failed!!!”
+4、注意事项
+无
+    
+
+1. Function description
+    LPTIM1 Counts the number of rising edges of IN1 IN2 encoder
+2. Use environment
+    Software development environment: KEIL MDK-ARM 5.34
+                                      IAR EWARM 8.50.1
+    Hardware development environment:
+        Developed based on the full-function board N32H497ZGL7_EVB V1.0
+3. Instructions for use
+    System Configuration;
+        1. Clock source: HSI+PLL
+        2. Clock frequency: 
+            240MHz
+        3, LPTIM CLK: LSI
+        4, Printing: PA9 - baud rate 115200
+
+    Port Configuration:
+        PC0 selected for LPTIM1 IN1 input
+        PC2 selected for LPTIM1 IN2 input
+        PB0 selected for IO output
+        PB1 selected for IO output
+
+    LPTIM Configuration:
+        LPTIM1 encoder mode, utilizing the internal LSI clock to continuously count the number of IN1 IN2 rising edges.
+
+    Usage:
+        1, Connect PB0 and PC0, PB1 and PC2.
+        2, Compile and download the program to run, PB0 PB1 output 20 pulse cycles, if encCNT is equal to 40, then the system is running normally, and print "LPTIM_ENC demo success!!!". Otherwise, print "LPTIM_ENC demo failed!!!".
+
+4. Matters needing attention
+None

@@ -1,0 +1,8 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "*.py": "python",
+        "n32h49x.h": "c",
+        "n32h49x_flash.h": "c"
+    }
+}

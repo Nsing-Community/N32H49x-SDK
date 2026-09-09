@@ -1,0 +1,79 @@
+﻿Nsing.N32H49x_Library.1.1.0版本：
+1. FDCANPLLPRES删除1分频描述
+2. 优化注释，FLASH LATENCY取决于SYSCLK
+3. 优化NVIC_SetVectorTable函数
+4. RCC_EnableEXTPll函数添加使用注意点并优化RCC例程
+5. 添加注意点：必须禁用预取功能
+6. 修改重复的宏定义命名
+7. 优化RCC_ConfigLse函数bypass模式配置
+8. 优化RTC_DeInit函数
+9. 优化SPI_Init函数
+10. 新增USART_FirstByteDelayFixSet函数并优化注释
+11. 更新双bank切换例程，以匹配双bank切换使用指南
+12. 优化ADC_ConfigAnalogWatchdogThresholds函数
+13. 更新USBFSD宏定义#define CONFIG_DESC_SIZE为32
+14. USBFSD的MSC demo调用MAL_Config()函数
+15. USBHS优化timing tune的参数
+16. 更新选项字节USER2，新增DAC保持配置位
+17. 更新ADC Get_NVR及VREFBUF_SetVoltageScale函数
+18. IWDG例程增加GTIM1测量LSI 
+
+
+Nsing.N32H49x_Library.1.0.0版本：
+1. USART LIN DEMO配置RX增加上拉设置
+2. 修改SPI_NSS_LOW宏定义
+3. 优化RCC时钟配置例程
+4. USBFS增加无晶体模式下远程唤醒功能
+5. 新增V2版本xspi驱动函数及例程
+6. 添加IAR工程和部分例程
+7. 优化RTC_EnterInitMode()函数
+8. 修改RTC_GetTime和RTC_GetSubSecond函数：通过读DATE寄存器解除日期寄存器锁定
+9. 补全USBHS主机复合设备Demo
+10. 优化FLASH_EraseOnePage函数：添加地址判断
+11. 优化SPI_FLASH例程：增加TE/BUSY/RXNE标志判断
+12. 修改例程中的EXTI_GetITStatus为EXTI_GetStatusFlag
+13. TIM_InitTimBaseStruct驱动函数，结构体初始化补充完整
+
+Nations.N32H49x_Library.0.1.0版本：
+1.初版发布
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Nsing.N32H49x_Library.1.1.0 Version:
+1. Removed the 1x divider description from FDCANPLLPRES
+2. Optimized comments; FLASH LATENCY depends on SYSCLK
+3. Optimized the NVIC_SetVectorTable function
+4. Added usage notes to the RCC_EnableEXTPll function and optimized the RCC example code
+5. Added note: Prefetch must be disabled
+6. Renamed duplicate macro definitions
+7. Optimized bypass mode configuration in the RCC_ConfigLse function
+8. Optimized the RTC_DeInit function
+9. Optimized the SPI_Init function
+10. Added the USART_FirstByteDelayFixSet function and optimized the comments
+11. Updated the dual-bank switching routine to match the dual-bank switching usage guide
+12. Optimized the `ADC_ConfigAnalogWatchdogThresholds` function
+13. Updated the USBFSD macro definition `#define CONFIG_DESC_SIZE` to 32
+14. The USBFSD MSC demo calls the `MAL_Config()` function
+15. Optimized the timing tune parameters for USBHS
+16. Updated option byte USER2; added a DAC hold configuration bit
+17. Updated the ADC Get_NVR and VREFBUF_SetVoltageScale functions
+18. Added GTIM1 measurement LSI to the IWDG example
+
+Nsing.N32H49x_Library.1.0.0 version:
+1. Configured USART LIN DEMO to add pull-up setting for RX
+2. Modified SPI_NSS_LOW macro definition
+3. Optimised RCC clock configuration routine
+4. Added remote wake-up functionality in crystal-less mode for USBFS
+5. Added V2 version xspi driver functions and examples
+6. Added IAR project and partial examples
+7. Optimised RTC_EnterInitMode() function
+8. Modified RTC_GetTime and RTC_GetSubSecond functions: Unlocks date register by reading DATE register
+9. Completion of USBHS host composite device demonstration
+10. Optimisation of FLASH_EraseOnePage function: addition of address validation
+11. Optimisation of SPI_FLASH routine: inclusion of TE/BUSY/RXNE flag checks
+12. Modification of EXTI_GetITStatus to EXTI_GetStatusFlag within example code
+13. TIM_InitTimBaseStruct driver function, structure initialization completion.
+
+Nations.N32H49x_Library.0.1.0 version:
+1.Initial Release
+
+
+
